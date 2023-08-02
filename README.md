@@ -10,14 +10,13 @@ The idea is to implement the backend system for tracking deployments of software
 4. Use knex for migration of the db 
 
 ### open points
+- [ ] create/delete projects api 
 - [ ] increase the code coverage at least 85%
 - [ ] split the rabbitmq service and the projects service
 - [ ] work on runtime validation of the typescript objects
 - [ ] database should probably be in a different library in order to isolate the user as much as possible
 - [ ] make a generic docker file to run the application
 - [ ] add transactional for statuses
-- [ ] redesign some apis 
-
 
 
 

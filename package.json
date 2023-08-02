@@ -52,9 +52,9 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "start:projects": "ts-node-dev src/servers/projects-server.ts",
+    "start:deployment": "ts-node-dev src/servers/deployment-server.ts",
     "start:data-aggregation": "ts-node-dev src/servers/aggregation-server.ts ",
-    "start": "concurrently \"npm run start:projects\" \"npm run start:data-aggregation\"",
+    "start": "concurrently \"npm run start:deployment\" \"npm run start:data-aggregation\"",
     "test": "SET NODE_ENV=test & SET PORT=7788 & jest",
     "test:watch": "npm run test -- --watchAll",
     "knex": "./node_modules/.bin/knex --knexfile src/database/knexfile.ts"
