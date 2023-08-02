@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "e130150a-5da7-4e44-b51d-2825f74c4c3a",
+		"name": "dataAggregation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getDataAggregation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/data/aggregation/:id?page=1",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"data",
+						"aggregation",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

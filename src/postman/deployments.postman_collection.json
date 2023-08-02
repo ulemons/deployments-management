@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "c1e20597-fd6a-4791-b9f6-8f97e96363a8",
+		"name": "deployments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateDeployment",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();\r",
+							"const isoTime = currentDate.toISOString();\r",
+							"pm.environment.set(\"createdAt\", isoTime);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/projects/:id/deployment",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"projects",
+						":id",
+						"deployment"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDeployment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/deployments/:id/cancel",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"deployments",
+						":id",
+						"cancel"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDeploymentById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/deployments/:id",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"deployments",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDeployments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/deployments?page=1",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"deployments"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateDeployment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"status\": \"done\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/deployment/webhook",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"deployment",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDeploymentStats",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{PROJECT_HOST}}/deployments/:userId/stats",
+					"protocol": "http",
+					"host": [
+						"{{PROJECT_HOST}}"
+					],
+					"path": [
+						"deployments",
+						":userId",
+						"stats"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
