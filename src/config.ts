@@ -8,6 +8,7 @@ export const CONSTANTS = {
   DONE_DEPLOYMENT_STATUSES: ['done'],
   JWT_SECRET: 'server-secret',
   DATA_EVENT_QUEUE: 'data-event-queue',
+  RABBITMQ_HOST: 'amqp://localhost',
 };
 
 export const DAO_CONSTANTS = {

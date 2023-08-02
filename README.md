@@ -9,14 +9,14 @@ The idea is to implement the backend system for tracking deployments of software
 3. Use Jest and sinon as test suite
 4. Use knex for migration of the db 
 
-### Still to achive
-1. increase the code coverage and code quality
-2. split the rabbitmq service and the projects service
-3. work on runtime validation of the typescript objects
-4. database should probably be in a different library in order to isolate the user as much as possible
-5. make a generic docker file to run the application
-6. add transactional for statuses
-7. redesign some apis 
+### open points
+- [ ] increase the code coverage at least 85%
+- [ ] split the rabbitmq service and the projects service
+- [ ] work on runtime validation of the typescript objects
+- [ ] database should probably be in a different library in order to isolate the user as much as possible
+- [ ] make a generic docker file to run the application
+- [ ] add transactional for statuses
+- [ ] redesign some apis 
 
 
 
