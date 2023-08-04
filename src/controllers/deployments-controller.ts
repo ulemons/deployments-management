@@ -1,11 +1,11 @@
 import { Context } from 'koa';
-import logger from '../logger';
-import { Deployment, DeploymentStats, DeploymentUpdateRequest, DeploymnetUpdateResponse } from '../models/deployments-models';
+import logger from '@logger';
+import { Deployment, DeploymentStats, DeploymentUpdateRequest, DeploymnetUpdateResponse } from '@models/deployments-models';
 import { UploadDeploymentSchema } from '../schema/deployment-schema';
 import { ValidationError, validate } from 'class-validator';
-import { FactoryService } from '../services/factory-service';
-import { GenericError } from '../errors/CustomErrors';
-import { CommonUtils } from '../utils/common-utils';
+import { FactoryService } from '@services/factory-service';
+import { GenericError } from '@errors/DeploymentErrors';
+import { CommonUtils } from '@utils/common-utils';
 
 const LOG_PREFIX = 'DeploymentsController | ';
 

@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { DeploymentsController } from '../controllers/deployments-controller';
+import { DeploymentsController } from '@controllers/deployments-controller';
 import { CONSTANTS } from '../config';
 import jwt from 'koa-jwt';
 

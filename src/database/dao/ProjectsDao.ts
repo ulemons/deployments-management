@@ -1,7 +1,7 @@
 import db from '../db';
 import { DAO_CONSTANTS } from '../../config';
-import { Project, ProjectUpdate } from '../../models/projects-models';
-import { GenericError } from '../../errors/CustomErrors';
+import { Project, ProjectUpdate } from '@models/projects-models';
+import { GenericError } from '@errors/DeploymentErrors';
 
 export class ProjectDao {
   public async getProjects(page?: number, pageSize?: number): Promise<Project[]> {

@@ -1,13 +1,15 @@
+import { register } from 'tsconfig-paths';
+register();
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import cors from 'koa2-cors';
 import logger from 'koa-logger';
-import projectsRoutes from '../routes/projects-routes';
-import tokenRoutes from '../routes/token-routes';
-import dataAggregationRoutes from '../routes/data-aggregation-routes';
-import deploymentRoutes from '../routes/deployments-routes';
+import projectsRoutes from '@routes/projects-routes';
+import tokenRoutes from '@routes/token-routes';
+import dataAggregationRoutes from '@routes/data-aggregation-routes';
+import deploymentRoutes from '@routes/deployments-routes';
 import { CONSTANTS } from '../config';
-import { ErrorHandler } from '../errors/ErrorHandler';
+import { ErrorHandler } from '@errors/ErrorHandler';
 
 const app = new Koa();
 const PORT = CONSTANTS.PROJECT_SERVER_PORT;

@@ -3,7 +3,7 @@ import { ProjectsService } from '../../src/services/projects-service';
 import sinon from 'sinon';
 import request from 'supertest';
 import { CommonStub, ProjectsStub } from '../Stubs';
-import server from '../../src/servers/projects-server';
+import server from '../../src/servers/deployment-server';
 
 let projectService: ProjectsService;
 

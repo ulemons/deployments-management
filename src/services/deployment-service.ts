@@ -1,12 +1,19 @@
 import { CONSTANTS } from '../config';
-import { Deployment, DeploymentStats, DeploymentUpdateRequest, DeploymnetUpdateResponse } from '../models/deployments-models';
-import { DeploymentUtils } from '../utils/deployments-utils';
+import {
+  Deployment,
+  DeploymentStats,
+  DeploymentUpdateRequest,
+  DeploymnetUpdateResponse,
+} from '@models/deployments-models';
+import { DeploymentUtils } from '@utils/deployments-utils';
 import { FactoryService } from './factory-service';
-import { QueueUtils } from '../utils/queue-utils';
-import { CommonUtils } from '../utils/common-utils';
+import { QueueUtils } from '@utils/queue-utils';
+import { CommonUtils } from '@utils/common-utils';
 
 export class DeploymentsService {
-  public async updateDeployment(request: DeploymentUpdateRequest): Promise<DeploymnetUpdateResponse> {
+  public async updateDeployment(
+    request: DeploymentUpdateRequest
+  ): Promise<DeploymnetUpdateResponse> {
     const deploymentDao = FactoryService.getDeploymentDao();
     const projectsDao = FactoryService.getProjetsDao();
     const deployment = await deploymentDao.getDeploymentById(request.id);
@@ -30,7 +37,9 @@ export class DeploymentsService {
     );
     QueueUtils.sendMessage({
       name: 'Status Update Event',
-      payload: { message: `The deployment ${request.id} went from ${deployment.status} to ${request.status}`},
+      payload: {
+        message: `The deployment ${request.id} went from ${deployment.status} to ${request.status}`,
+      },
       projectId: deployment.projectId,
     });
     return {

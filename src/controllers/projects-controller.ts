@@ -1,10 +1,10 @@
 import { Context } from 'koa';
-import logger from '../logger';
-import { FactoryService } from '../services/factory-service';
-import { GenericError } from '../errors/CustomErrors';
-import { Project } from '../models/projects-models';
-import { CommonUtils } from '../utils/common-utils';
-import { Deployment } from '../models/deployments-models';
+import logger from '@logger';
+import { FactoryService } from '@services/factory-service';
+import { GenericError } from '@errors/DeploymentErrors';
+import { Project } from '@models/projects-models';
+import { CommonUtils } from '@utils/common-utils';
+import { Deployment } from '@models/deployments-models';
 
 const LOG_PREFIX = 'ProjectsController | ';
 export class ProjectsController {

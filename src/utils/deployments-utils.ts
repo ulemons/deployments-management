@@ -1,7 +1,7 @@
 import { CONSTANTS } from '../config';
-import { DeploymentStatusError, GenericError } from '../errors/CustomErrors';
-import { Deployment, DeploymentStats, DeploymentStatus } from '../models/deployments-models';
-import { Project } from '../models/projects-models';
+import { DeploymentStatusError, GenericError } from '@errors/DeploymentErrors';
+import { Deployment, DeploymentStats, DeploymentStatus } from '@models/deployments-models';
+import { Project } from '@models/projects-models';
 
 export class DeploymentUtils {
   public static getDeploymentStats(deployments: Deployment[]): DeploymentStats {

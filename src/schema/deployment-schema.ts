@@ -1,5 +1,5 @@
 import { IsDate, IsEnum, IsNumber, Min } from 'class-validator';
-import { DeploymentStatus, DeploymnetStatusEnum } from '../models/deployments-models';
+import { DeploymentStatus, DeploymnetStatusEnum } from '@models/deployments-models';
 
 export class CreateDeploymentSchema {
   @Min(0)

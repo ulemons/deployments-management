@@ -1,4 +1,4 @@
-import server from '../../src/servers/projects-server';
+import server from '../../src/servers/deployment-server';
 import { FactoryService } from '../../src/services/factory-service';
 import request from 'supertest';
 import sinon from 'sinon';

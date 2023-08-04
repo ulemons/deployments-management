@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 import { CONSTANTS} from '../config';
 import jwt from 'koa-jwt';
-import { DataAggregationController } from '../controllers/data-aggregation-controller';
+import { DataAggregationController } from '@controllers/data-aggregation-controller';
 
 const router = new Router();
 

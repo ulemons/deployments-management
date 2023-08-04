@@ -1,4 +1,4 @@
-import { DeploymentStatus } from '../models/deployments-models';
+import { DeploymentStatus } from '@models/deployments-models';
 
 export class GenericError extends Error {
   public readonly status: number;

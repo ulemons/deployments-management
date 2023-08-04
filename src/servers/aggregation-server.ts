@@ -1,11 +1,14 @@
+import { register } from 'tsconfig-paths';
+register();
 import Koa from 'koa';
 import amqp from 'amqplib';
 import { CONSTANTS } from '../config';
 import { DataEvent } from '../models/events-model';
 import { DataAggregationService } from '../services/data-aggregation-service';
-import logger from '../logger'
+import logger from '@logger';
 
 const app = new Koa();
+
 const PORT = CONSTANTS.DATA_AGGREGATION_PORT;
 
 async function listenToQueue() {

@@ -1,5 +1,5 @@
 import Router from "koa-router";
-import { ProjectsController } from "../controllers/projects-controller";
+import { ProjectsController } from "@controllers/projects-controller";
 import jwt from "koa-jwt";
 import { CONSTANTS } from "../config";
 

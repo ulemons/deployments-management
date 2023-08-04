@@ -1,6 +1,6 @@
 # Deployments management
 
-The idea is to implement the backend system for tracking deployments of software projects. You can find the api exposed on the : [Updated swagger](./project-api.yaml)
+The idea is to implement the backend system for tracking deployments of software projects. You can find the api exposed on the : [swagger](./project-api.yaml)
 
 ### Goal
 

@@ -1,10 +1,9 @@
-import db from '../database/db';
-import { Project } from '../models/projects-models';
-import { Deployment } from '../models/deployments-models';
-import { DeploymentUtils } from '../utils/deployments-utils';
+import { Project } from '@models/projects-models';
+import { Deployment } from '@models/deployments-models';
+import { DeploymentUtils } from '@utils/deployments-utils';
 import { FactoryService } from './factory-service';
 import { CONSTANTS } from '../config';
-import { QueueUtils } from '../utils/queue-utils';
+import { QueueUtils } from '@utils/queue-utils';
 
 const LOG_PREFIX = 'ProjectsService | ';
 

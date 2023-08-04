@@ -1,6 +1,6 @@
 import { DAO_CONSTANTS } from '../../config';
-import { GenericError } from '../../errors/CustomErrors';
-import { Deployment, DeploymentDB, DeploymentUpdate } from '../../models/deployments-models';
+import { GenericError } from '@errors/DeploymentErrors';
+import { Deployment, DeploymentDB, DeploymentUpdate } from '@models/deployments-models';
 import db from '../db';
 
 export class DeploymentDao {

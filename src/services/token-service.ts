@@ -1,5 +1,5 @@
 import jsonwebtoken from 'jsonwebtoken';
-import { Token } from '../models/token-models';
+import { Token } from '@models/token-models';
 import { CONSTANTS } from '../config';
 
 

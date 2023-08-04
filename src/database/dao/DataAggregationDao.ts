@@ -1,4 +1,4 @@
-import { DataEvent } from '../../models/events-model';
+import { DataEvent } from '@models/events-model';
 import { DAO_CONSTANTS } from '../../config';
 
 import db from '../db';
@@ -23,5 +23,13 @@ export class DataAggregationDao {
         .where('project_id', projectId)
         .from(DAO_CONSTANTS.DATA_AGGREGATION_TABLE);
     }
+  }
+
+  public async pushEvent(event: DataEvent) {
+    await db('data_events').insert({
+      payload: event.payload,
+      name: event.name,
+      project_id: event.projectId,
+    });
   }
 }

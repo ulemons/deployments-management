@@ -1,9 +1,9 @@
 import { Context } from 'koa';
-import logger from '../logger';
-import { FactoryService } from '../services/factory-service';
-import { GenericError } from '../errors/CustomErrors';
-import { CommonUtils } from '../utils/common-utils';
-import { DataEvent } from '../models/events-model';
+import logger from '@logger';
+import { FactoryService } from '@services/factory-service';
+import { GenericError } from '@errors/DeploymentErrors';
+import { CommonUtils } from '@utils/common-utils';
+import { DataEvent } from '@models/events-model';
 
 const LOG_PREFIX = 'DataAggregationController | ';
 
@@ -13,7 +13,7 @@ export class DataAggregationController {
     const LOG_FUNCTION_PREFIX = LOG_PREFIX + 'getFeed |';
     const page = parseInt(ctx.query.page as string);
     const projectId = parseInt(ctx.params.id);
-    logger.info(`${LOG_FUNCTION_PREFIX} page requested: ${page}`);
+    logger.info(`${LOG_FUNCTION_PREFIX} projectid: ${projectId}, page requested: ${page}`);
     if (page < 1) {
       throw new GenericError("The 'page' parameter must be greater than zero", 400);
     } 

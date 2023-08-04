@@ -1,12 +1,12 @@
 import amqp from 'amqplib';
 import { CONSTANTS } from '../config';
-import { DataEvent } from '../models/events-model';
-import logger from '../logger';
+import { DataEvent } from '@models/events-model';
+import logger from '@logger';
 
 export class QueueUtils {
   public static async sendMessage(message: DataEvent) {
     try {
-      const connection = await amqp.connect('amqp://localhost');
+      const connection = await amqp.connect(CONSTANTS.RABBITMQ_HOST);
       const channel = await connection.createChannel();
 
       const queueName = CONSTANTS.DATA_EVENT_QUEUE;

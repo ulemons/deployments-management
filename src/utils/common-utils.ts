@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
-import logger from '../logger';
+import logger from '@logger';
 import { Context } from 'koa';
-import { SuccessResponsePayload } from '../models/common-models';
+import { SuccessResponsePayload } from '@models/common-models';
 
 const LOG_PREFIX = 'DataAggregationController | ';
 
